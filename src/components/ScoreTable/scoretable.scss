@@ -1,0 +1,80 @@
+.scoretable-header {
+	font-weight: 700;
+	& .header-span {
+		background-color: #344568;
+		color: #E7EEE7;
+		height: 3rem;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		
+		&.first, &.second, &.third, &.fourth, &.total {
+			display: flex;
+			justify-content: center;
+		}
+		
+		&.position {
+			background-color: transparent; // Override bg color to transparent bc it is not needed in header
+		}
+	}
+}
+
+.scoretable-body {
+	& .body-span {
+		background-color: #F57C00;
+		height: 3rem;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		margin-top: 1rem;
+		
+		&.first, &.second, &.third, &.fourth, &.total {
+			display: flex;
+			justify-content: center;
+		}
+
+		&.position {
+			width: 3rem;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			& p {
+				font-family: 'Londrina Solid', sans-serif, Arial, Helvetica, sans-serif;
+				color: #344568;
+				font-size: 1.5rem;
+			}
+		}
+		
+		&.team {
+			background-color: #FBC02D;
+			font-weight: 700;
+		}
+	}
+}
+
+.slide-top {
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+}

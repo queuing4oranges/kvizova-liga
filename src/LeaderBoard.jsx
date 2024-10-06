@@ -1,9 +1,10 @@
 import { Container, Row } from 'reactstrap';
-import Navbar from './components/Navbar/Navbar/Navbar';
-import Heading from './components/Navbar/AnimatedHeading/Heading';
+import Navbar from './components/Navbar/Navbar';
+import Heading from './components/AnimatedHeading/Heading';
 import backgroundImage from '../src/assets/quiz-league-background.png'
 
 import './leaderboard.scss';
+import ScoreTable from './components/ScoreTable/ScoreTable';
 
 export default function LeaderBoard() {
 	return (
@@ -25,11 +26,8 @@ export default function LeaderBoard() {
 			<Row className='p-3'>
 				<Heading />
 			</Row>
-			<Row className='p-3'>
-				{/* something about 1-3 place */}
-			</Row>
-			<Row className='p-3'>
-				{/* some leaderboard table */}
+			<Row className='p-5 '>
+				<ScoreTable />
 			</Row>
 		</Container>
 	)

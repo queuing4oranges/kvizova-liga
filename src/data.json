@@ -1,8 +1,8 @@
 {
 	"teams": [
 		{
-			"name": "Team Alpha",
-			"members": ["Alice", "Bob", "Charlie", "Diana"],
+			"name": "Alpaka United",
+			"members": ["Alice | ","Bob | ", "Charlie | ", "Diana"],
 			"scores": {
 				"round1": 10,
 				"round2": 15,
@@ -12,8 +12,8 @@
 			}
 		},
 		{
-			"name": "Team Buchta",
-			"members": ["Eve", "Frank", "Grace", "Hannah"],
+			"name": "Buchta Praha",
+			"members": ["Eve | ", "Frank | ", "Grace | ", "Hannah"],
 			"scores": {
 				"round1": 12,
 				"round2": 18,
@@ -23,8 +23,8 @@
 			}
 		},
 		{
-		"name": "Team Chupka",
-		"members": ["Ian", "Judy", "Kyle", "Liam"],
+		"name": "Cupka QC",
+		"members": ["Ian | ", "Judy | ", "Kyle | ", "Liam"],
 		"scores": {
 			"round1": 14,
 			"round2": 20,
@@ -34,8 +34,8 @@
 			}
 		},
 		{
-		"name": "Team Dumbo",
-		"members": ["Mona", "Nina", "Oscar", "Peter"],
+		"name": "Dumbo Dolphins",
+		"members": ["Mona | ", "Nina | ", "Oscar | ", "Peter"],
 		"scores": {
 			"round1": 15,
 			"round2": 25,
@@ -45,8 +45,8 @@
 			}
 		},
 		{
-		"name": "Team Egoist",
-		"members": ["Quinn", "Rita", "Sam", "Tina"],
+		"name": "Ego Mania Hradec Kralove",
+		"members": ["Quinn | ", "Rita | ", "Sam | ", "Tina"],
 		"scores": {
 			"round1": 18,
 			"round2": 22,
@@ -56,8 +56,8 @@
 			}
 		},
 		{
-		"name": "Team Fufr",
-		"members": ["Uma", "Victor", "Will", "Xena"],
+		"name": "Fufr Frankfurter Würstchen",
+		"members": ["Uma | ", "Victor | ", "Will | ", "Xena"],
 		"scores": {
 			"round1": 10,
 			"round2": 20,
@@ -67,8 +67,8 @@
 			}
 		},
 		{
-		"name": "Team Golem",
-		"members": ["Yara", "Zane", "Alina", "Brad"],
+		"name": "Golem Gingerbread Women",
+		"members": ["Yara | ", "Zane | ", "Antonella | ", "Brad"],
 		"scores": {
 			"round1": 12,
 			"round2": 15,

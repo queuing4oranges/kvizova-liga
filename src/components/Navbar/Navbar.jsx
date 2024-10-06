@@ -1,5 +1,5 @@
 import { Col } from 'reactstrap';
-import KvirtivityLogo from '../../../KvirtivityLogo';
+import KvirtivityLogo from '../../KvirtivityLogo';
 
 import './navbar.scss';
 
