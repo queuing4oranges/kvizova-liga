@@ -1,5 +1,5 @@
 import { Col } from 'reactstrap';
-import KvirtivityLogo from '../../KvirtivityLogo';
+import KvirtivityLogo from '../../../KvirtivityLogo';
 
 import './navbar.scss';
 
@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
 	<>
 		<Col>
-			<KvirtivityLogo height={10} width={51}/>
+			<KvirtivityLogo height={40} width={160}/>
 		</Col>
 		<Col>
 			<span className='d-flex justify-content-end align-items-center'>

@@ -1,3 +1,16 @@
 .container-fluid {
-	border: 1px solid red;
+
+}
+
+.rainbow-gradient {
+	background: linear-gradient(to right, 
+		#FF7070,
+		#FFA547,
+		#FFFF8F,
+		#8FFF8F,
+		#8FCFFF,
+		#8F70B5,
+		#D39CFF
+	);
+	min-height: 100vh;
 }
