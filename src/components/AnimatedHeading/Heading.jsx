@@ -22,6 +22,9 @@ export default function Heading() {
 				<span>g</span>
 				<span>a</span>
 			</div>
+			<div className='mobile-heading'>
+				<h1>LGBTQ+ Kvízová Liga</h1>
+			</div>
 		</div>
 	);
 }

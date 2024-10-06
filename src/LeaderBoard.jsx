@@ -20,13 +20,13 @@ export default function LeaderBoard() {
 				position: 'relative',
 			}}
 		>
-			<Row className='p-3'>
+			<Row className='p-3 d-flex align-items-center'>
 				<Navbar />
 			</Row>
 			<Row className='p-3'>
 				<Heading />
 			</Row>
-			<Row className='p-5 '>
+			<Row className='p-5 score-table-row'>
 				<ScoreTable />
 			</Row>
 		</Container>

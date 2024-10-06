@@ -15,6 +15,10 @@
 	animation: revolveScale .4s forwards;
 }
 
+.mobile-heading {
+	display: none;
+}
+
 .animate {
 	margin: 50px 0 0;
 }
@@ -80,6 +84,28 @@
 	100% {
 		transform: translate(0) rotate(0) scale(1);
 		opacity: 1;
+	}
+}
+
+@media (max-width: 576px) { /* Extra small screens */
+	.heading-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.one span {
+		display: none;
+	}
+
+	.mobile-heading {
+		display: block;
+		width: 50%;
+		font-family: 'Londrina Solid', sans-serif, Arial, Helvetica, sans-serif;
+		color: #344568;
+		margin-top: 2rem;
+		& h1 {
+			font-size: 4rem;
+		}
 	}
 }
 
