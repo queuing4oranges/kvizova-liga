@@ -9,7 +9,7 @@ export default function ScoreTable() {
 		<>
 			<Row className='scoretable-header'>
 				<Col md='1'><span className='header-span position'></span></Col>
-				<Col md='3'><span className='header-span'>Team</span></Col>
+				<Col md='3'><span className='shadow header-span'>Team</span></Col>
 				<Col md='3'><span className='header-span'>Team members</span></Col>
 				<Col md='1'><span className='header-span first'>1st round</span></Col>
 				<Col md='1'><span className='header-span second'>2nd round</span></Col>
