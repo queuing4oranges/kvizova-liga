@@ -1,0 +1,81 @@
+{
+	"teams": [
+		{
+			"name": "Team Alpha",
+			"members": ["Alice", "Bob", "Charlie", "Diana"],
+			"scores": {
+				"round1": 10,
+				"round2": 15,
+				"round3": 20,
+				"round4": 25,
+				"total": 80
+			}
+		},
+		{
+			"name": "Team Buchta",
+			"members": ["Eve", "Frank", "Grace", "Hannah"],
+			"scores": {
+				"round1": 12,
+				"round2": 18,
+				"round3": 22,
+				"round4": 30,
+				"total": 82
+			}
+		},
+		{
+		"name": "Team Chupka",
+		"members": ["Ian", "Judy", "Kyle", "Liam"],
+		"scores": {
+			"round1": 14,
+			"round2": 20,
+			"round3": 26,
+			"round4": 22,
+			"total": 82
+			}
+		},
+		{
+		"name": "Team Dumbo",
+		"members": ["Mona", "Nina", "Oscar", "Peter"],
+		"scores": {
+			"round1": 15,
+			"round2": 25,
+			"round3": 30,
+			"round4": 20,
+			"total": 90
+			}
+		},
+		{
+		"name": "Team Egoist",
+		"members": ["Quinn", "Rita", "Sam", "Tina"],
+		"scores": {
+			"round1": 18,
+			"round2": 22,
+			"round3": 24,
+			"round4": 26,
+			"total": 90
+			}
+		},
+		{
+		"name": "Team Fufr",
+		"members": ["Uma", "Victor", "Will", "Xena"],
+		"scores": {
+			"round1": 10,
+			"round2": 20,
+			"round3": 30,
+			"round4": 25,
+			"total": 85
+			}
+		},
+		{
+		"name": "Team Golem",
+		"members": ["Yara", "Zane", "Alina", "Brad"],
+		"scores": {
+			"round1": 12,
+			"round2": 15,
+			"round3": 18,
+			"round4": 30,
+			"total": 75
+			}
+		}
+  	]
+}

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap'); // Use: font-family: "Londrina Solid", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); // Use: font-family: "Open Sans", sans-serif;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	--bs-body-font-family: "Open sans", sans-serif;
+}
