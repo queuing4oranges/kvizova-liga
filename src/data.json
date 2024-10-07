@@ -1,81 +1,109 @@
 {
 	"teams": [
 		{
-			"name": "Alpaka United",
-			"members": ["Alice | ","Bob | ", "Charlie | ", "Diana"],
+			"name": "Nackensteak United",
+			"members": ["Jana | ","Katja | ", "Hildegard | ", "Knut"],
 			"scores": {
 				"round1": 10,
 				"round2": 15,
 				"round3": 20,
 				"round4": 25,
-				"total": 80
-			}
+				"round5": 17,
+				"round6": 26,
+				"round7": 15,
+				"round8": 22
+			},
+			"total": 666
 		},
 		{
-			"name": "Buchta Praha",
-			"members": ["Eve | ", "Frank | ", "Grace | ", "Hannah"],
+			"name": "Fufr Frankfurter Würstchen",
+			"members": ["Uma | ", "Ute | ", "Uschi | ", "Udo"],
+			"scores": {
+				"round1": 10,
+				"round2": 20,
+				"round3": 30,
+				"round4": 25,
+				"round5": 25,
+				"round6": 21,
+				"round7": 24,
+				"round8": 19
+			},
+			"total": 185
+		},
+		{
+			"name": "Golem Gingerbread Women",
+			"members": ["Yara | ", "Zane | ", "Antonella | ", "Brad"],
 			"scores": {
 				"round1": 12,
-				"round2": 18,
-				"round3": 22,
+				"round2": 15,
+				"round3": 18,
 				"round4": 30,
-				"total": 82
-			}
+				"round5": 14,
+				"round6": 28,
+				"round7": 16,
+				"round8": 27
+			},
+			"total": 175
 		},
 		{
-		"name": "Cupka QC",
-		"members": ["Ian | ", "Judy | ", "Kyle | ", "Liam"],
-		"scores": {
-			"round1": 14,
-			"round2": 20,
-			"round3": 26,
-			"round4": 22,
-			"total": 82
-			}
+			"name": "We love big boobs",
+			"members": ["Emma | ", "James | ", "Olivia | ", "Noah"],
+			"scores": {
+				"round1": 10,
+				"round2": 22,
+				"round3": 17,
+				"round4": 25,
+				"round5": 25,
+				"round6": 21,
+				"round7": 24,
+				"round8": 19
+			},
+			"total": 174
 		},
 		{
-		"name": "Dumbo Dolphins",
-		"members": ["Mona | ", "Nina | ", "Oscar | ", "Peter"],
-		"scores": {
-			"round1": 15,
-			"round2": 25,
-			"round3": 30,
-			"round4": 20,
-			"total": 90
-			}
+			"name": "Lady bits",
+			"members": ["Sophia | ", "Liam | ", "Amelia | ", "Mason"],
+			"scores": {
+				"round1": 14,
+				"round2": 18,
+				"round3": 16,
+				"round4": 29,
+				"round5": 14,
+				"round6": 28,
+				"round7": 16,
+				"round8": 27
+			},
+			"total": 177
 		},
 		{
-		"name": "Ego Mania Hradec Kralove",
-		"members": ["Quinn | ", "Rita | ", "Sam | ", "Tina"],
-		"scores": {
-			"round1": 18,
-			"round2": 22,
-			"round3": 24,
-			"round4": 26,
-			"total": 90
-			}
+			"name": "The Mighty Meat Curtains",
+			"members": ["Lucas | ", "Mia | ", "Isabella | ", "Ethan"],
+			"scores": {
+				"round1": 11,
+				"round2": 19,
+				"round3": 23,
+				"round4": 21,
+				"round5": 14,
+				"round6": 17,
+				"round7": 5,
+				"round8": 27
+			},
+			"total": 174
 		},
 		{
-		"name": "Fufr Frankfurter Würstchen",
-		"members": ["Uma | ", "Victor | ", "Will | ", "Xena"],
-		"scores": {
-			"round1": 10,
-			"round2": 20,
-			"round3": 30,
-			"round4": 25,
-			"total": 85
-			}
-		},
-		{
-		"name": "Golem Gingerbread Women",
-		"members": ["Yara | ", "Zane | ", "Antonella | ", "Brad"],
-		"scores": {
-			"round1": 12,
-			"round2": 15,
-			"round3": 18,
-			"round4": 30,
-			"total": 75
-			}
+			"name": "Pussy is not a breakfast",
+			"members": ["Charlotte | ", "Alexander | ", "Harper | ", "Elijah"],
+			"scores": {
+				"round1": 13,
+				"round2": 21,
+				"round3": 20,
+				"round4": 28,
+				"round5": 14,
+				"round6": 28,
+				"round7": 16,
+				"round8": 27
+			},
+			"total": 182
 		}
-  	]
+	]
 }

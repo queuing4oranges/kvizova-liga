@@ -1,4 +1,6 @@
-.container-fluid {
-
+@media (max-width: 576px) { /* Extra small screens */
+	.score-table-row {
+		display: flex;
+		justify-content: center;
+	}
 }
-

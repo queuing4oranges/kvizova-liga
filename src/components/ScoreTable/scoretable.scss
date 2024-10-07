@@ -8,9 +8,11 @@
 		display: flex;
 		align-items: center;
 		
-		&.first, &.second, &.third, &.fourth, &.total {
+		&.round {
 			display: flex;
 			justify-content: center;
+			width: 5rem;
+			margin-right: 1rem;
 		}
 		
 		&.position {
@@ -31,9 +33,11 @@
 		align-items: center;
 		margin-top: 1rem;
 		
-		&.first, &.second, &.third, &.fourth, &.total {
+		&.round {
 			display: flex;
 			justify-content: center;
+			width: 5rem;
+			margin-right: 1rem;
 			&:hover {
 				background-color: brown;
 				color: #E7EEE7;
@@ -61,5 +65,43 @@
 		&.total {
 			font-weight: 700;
 		}
+	}
+}
+
+.scoretable-body-mobile {
+	display: none !important;
+}
+
+@media (max-width: 576px) { /* Extra small screens */
+	.scoretable-header, .scoretable-body {
+		display: none !important;
+	}
+	
+	.scoretable-body-mobile {
+		display: block !important;
+		
+		& .card {
+			background-color: #F57C00;
+			font-weight: 500;
+		}
+		
+		& .card-title {
+			font-size: 1.25rem;
+			font-weight: 700;
+		}
+	}
+	
+	.card-span.position {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		background-color: #FBC02D;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.card-span.total {
+		font-weight: 700;
 	}
 }

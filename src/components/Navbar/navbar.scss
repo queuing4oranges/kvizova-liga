@@ -7,3 +7,13 @@
 .bi-envelope {
 	font-size: 2.5rem;
 }
+
+@media (max-width: 576px) { /* Extra small screens */
+	.bi-instagram, .bi-facebook, .bi-envelope {
+		font-size: 1.5rem;
+	}
+	
+	.bi-envelope {
+		font-size: 2rem;
+	}
+}
