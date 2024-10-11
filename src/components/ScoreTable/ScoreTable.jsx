@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader
+	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader, Table
 } from 'reactstrap';
 import data from '../../data.json';
 
@@ -11,37 +11,36 @@ export default function ScoreTable() {
 
 	return (
 		<>
-			<Row className='scoretable-header'>
-				<Col md='1'><span className='header-span position'></span></Col>
-				<Col md='3'><span className='shadow header-span'>Team</span></Col>
-				<Col md='3'><span className='header-span'>Team members</span></Col>
-				<Col md='4' className='d-flex'>
-					{[...Array(8)].map((_, idx) => (
-						<span key={idx} className='header-span round'>{idx + 1}</span>
-					))}
-				</Col>
-				<Col md='1'>
-					<span className='header-span total d-flex justify-content-center'>Total</span>
-				</Col>
+			<Row>
+				<Table>
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Team</th>
+							<th>Team members</th>
+							{[...Array(8).keys()].map((num) => (
+								<th key={num + 1}>{num + 1}</th>
+							))}
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
+						<tr key={idx} className='header-span round'>
+							<td>{idx + 1}</td>
+							<td>{team.name}</td>
+							<td>{team.members}</td>
+							{Object.keys(team.scores).map((round, idx) => (
+								<td key={idx} className='body-span round'>{team.scores[round]}</td>
+							))}
+							<td>{team.total}</td>
+						</tr>
+						))}
+					</tbody>
+				</Table>
 			</Row>
-			{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
-			<Row className='scoretable-body' key={idx}>
-				<Col md='1' className='d-flex justify-content-end'>
-					<span className='body-span position'><p className='m-0'>{idx + 1}</p></span>
-				</Col>
-				<Col md='3'><span className='body-span team'>{team.name}</span></Col>
-				<Col md='3'><span className='body-span'>{team.members}</span></Col>
-				<Col md='4' className='d-flex'>
-					{Object.keys(team.scores).map((round, idx) => (
-						<span key={idx} className='body-span round'>{team.scores[round]}</span>
-					))}
-				</Col>
-				<Col md='1'>
-					<span className='body-span total d-flex justify-content-center'>{team.total}</span>
-				</Col>
-			</Row>
-			))}
 
+			{/* This is the render for mobile version */}
 			{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
 			<Row className='scoretable-body-mobile' key={idx}>
 				<Card className={`my-2 flip-card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>

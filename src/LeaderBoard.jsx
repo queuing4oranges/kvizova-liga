@@ -26,7 +26,7 @@ export default function LeaderBoard() {
 			<Row className='p-3'>
 				<Heading />
 			</Row>
-			<Row className='p-1 score-table-row'>
+			<Row className='p-3 score-table-row d-flex justify-content-center'>
 				<ScoreTable />
 			</Row>
 		</Container>
