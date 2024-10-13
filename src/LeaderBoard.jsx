@@ -16,6 +16,7 @@ export default function LeaderBoard() {
 				backgroundSize: 'cover',
 				minHeight: '100vh',
 				display: 'flex',
+				minWidth: '100vw',
 				flexDirection: 'column',
 				position: 'relative',
 			}}
@@ -26,7 +27,7 @@ export default function LeaderBoard() {
 			<Row className='p-3'>
 				<Heading />
 			</Row>
-			<Row className='p-3 score-table-row d-flex justify-content-center'>
+			<Row className='p-3 score-table-row d-flex justify-content-center mx-1'>
 				<ScoreTable />
 			</Row>
 		</Container>

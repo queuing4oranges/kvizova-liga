@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader, Table
+	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader,
 } from 'reactstrap';
 import data from '../../data.json';
 
@@ -12,32 +12,32 @@ export default function ScoreTable() {
 	return (
 		<>
 			<Row>
-				<Table>
-					<thead>
+				<table className='table' >
+					<thead className='scoretable-header'>
 						<tr>
-							<th>#</th>
+							<th className='text-center'>#</th>
 							<th>Team</th>
 							<th>Team members</th>
 							{[...Array(8).keys()].map((num) => (
-								<th key={num + 1}>{num + 1}</th>
+								<th className='th-rounds' key={num + 1}>{num + 1}</th>
 							))}
-							<th>Total</th>
+							<th className='th-total'>Total</th>
 						</tr>
 					</thead>
 					<tbody>
 						{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
-						<tr key={idx} className='header-span round'>
-							<td>{idx + 1}</td>
-							<td>{team.name}</td>
-							<td>{team.members}</td>
+						<tr className='tb-rows' key={idx}>
+							<td><span className='header-span-round'>{idx + 1}</span></td>
+							<td className='team-name-column align-middle'>{team.name}</td>
+							<td className='team-members-column align-middle'>{team.members}</td>
 							{Object.keys(team.scores).map((round, idx) => (
-								<td key={idx} className='body-span round'>{team.scores[round]}</td>
+								<td className='team-rounds align-middle text-center' key={idx}>{team.scores[round]}</td>
 							))}
-							<td>{team.total}</td>
+							<td className='team-totals align-middle text-center fw-bold'>{team.total}</td>
 						</tr>
 						))}
 					</tbody>
-				</Table>
+				</table>
 			</Row>
 
 			{/* This is the render for mobile version */}
@@ -45,7 +45,7 @@ export default function ScoreTable() {
 			<Row className='scoretable-body-mobile' key={idx}>
 				<Card className={`my-2 flip-card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
 					{!isFlipped ?
-						<CardBody>
+						<CardBody className='p-2 px-0'>
 							<CardHeader className='py-3 d-flex justify-content-center'>
 								<span className='card-span position'>{idx + 1}</span>
 							</CardHeader>
@@ -59,12 +59,13 @@ export default function ScoreTable() {
 							</CardText>
 						</CardBody>
 						:
-						<CardBody>
-							<CardHeader className='py-3 d-flex justify-content-center'>
-								<span className='card-span back'>Score card</span>
+						<CardBody className='p-2 px-0'>
+							<CardHeader className='py-1 px-0'>
+								<CardTitle className='m-0'>
+									<span className='card-span back'>{team.name}</span>
+								</CardTitle>
 							</CardHeader>
-							<CardTitle className='text-center'>{team.name}</CardTitle>
-							<CardText>
+							<CardText className='mt-2'>
 								<Row>
 									<Col xs={4}>Round 1:</Col>
 									<Col xs={2}>{team.scores.round1}</Col>
