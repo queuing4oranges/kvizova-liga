@@ -33,7 +33,7 @@ export default function ScoreTable() {
 				<tbody>
 					{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
 					<tr className='tb-rows' key={idx}>
-						<td className='d-flex justify-content-end'><span className='header-span-round'>{idx + 1}</span></td>
+						<td className='position-column d-flex justify-content-end'><span className='header-span-round'>{idx + 1}</span></td>
 						<td className='align-middle team-name-column'>{team.name}</td>
 						<td className='team-members-column align-middle'>{team.members}</td>
 						{Object.keys(team.scores).map((round, idx) => (
@@ -49,12 +49,12 @@ export default function ScoreTable() {
 			{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
 			<Row className='scoretable-body-mobile' key={idx}>
 				<Card className={`my-2 flip-card ${flippedCards[idx] ? 'flipped' : ''}`} >
-					{flippedCards[idx] ?
+					{!flippedCards[idx] ?
 						<CardBody className='p-2 px-0 card-body-front position-relative'>
 							<CardHeader className='py-1 d-flex justify-content-center'>
 								<span className='card-span position'>{idx + 1}</span>
 							</CardHeader>
-							<CardTitle>{team.name}</CardTitle>
+							<CardTitle className='fs-2'>{team.name}</CardTitle>
 							<CardText>
 								<span className='d-flex flex-column'>
 									<span>Team members:</span>

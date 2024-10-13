@@ -13,6 +13,7 @@ export default function LeaderBoard() {
 			style={{
 				backgroundImage: `url(${backgroundImage})`,
 				backgroundSize: 'cover',
+				minHeight: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
 				position: 'relative',
