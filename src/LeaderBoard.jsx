@@ -24,7 +24,7 @@ export default function LeaderBoard() {
 			<Row className='p-3'>
 				<Heading />
 			</Row>
-			<Row className='p-3 score-table-row w-100'>
+			<Row className='p-3 score-table-row w-100 m-auto'>
 				<ScoreTable />
 			</Row>
 		</Container>

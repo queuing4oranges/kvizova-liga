@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader,
+	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader, CardFooter, Button,
 } from 'reactstrap';
 import data from '../../data.json';
 
@@ -49,12 +49,18 @@ export default function ScoreTable() {
 							</CardHeader>
 							<CardTitle>{team.name}</CardTitle>
 							<CardText>
-								<span>
-									Team members:
-									{team.members}
+								<span className='d-flex flex-column'>
+									<span>Team members:</span>
+									<span>{team.members}</span>
 								</span><br />
-								<span className='card-span total'>Score total: {team.total}</span>
+								<span className='card-span total'>Total: {team.total} points</span>
 							</CardText>
+							<CardFooter className='d-flex justify-content-center'>
+								<Button color='info'>
+									<i className='bi bi-bar-chart-line pe-2' />
+									Scores
+								</Button>
+							</CardFooter>
 						</CardBody>
 						:
 						<CardBody className='p-2 px-0'>
@@ -87,8 +93,13 @@ export default function ScoreTable() {
 									<Col xs={4}>Round 8:</Col>
 									<Col xs={2}>{team.scores.round8}</Col>
 								</Row>
-
 							</CardText>
+							<CardFooter className='d-flex justify-content-center'>
+								<Button color='info'>
+									<i className='bi bi-chevron-double-left' />
+									Back
+								</Button>
+							</CardFooter>
 						</CardBody>
 					}
 				</Card>
