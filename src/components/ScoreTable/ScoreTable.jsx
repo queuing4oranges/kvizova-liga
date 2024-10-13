@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader, CardFooter, Button,
+	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader, Button,
 } from 'reactstrap';
 import data from '../../data.json';
 
@@ -50,8 +50,8 @@ export default function ScoreTable() {
 			<Row className='scoretable-body-mobile' key={idx}>
 				<Card className={`my-2 flip-card ${flippedCards[idx] ? 'flipped' : ''}`} >
 					{flippedCards[idx] ?
-						<CardBody className='p-2 px-0'>
-							<CardHeader className='py-3 d-flex justify-content-center'>
+						<CardBody className='p-2 px-0 card-body-front position-relative'>
+							<CardHeader className='py-1 d-flex justify-content-center'>
 								<span className='card-span position'>{idx + 1}</span>
 							</CardHeader>
 							<CardTitle>{team.name}</CardTitle>
@@ -60,53 +60,54 @@ export default function ScoreTable() {
 									<span>Team members:</span>
 									<span>{team.members}</span>
 								</span><br />
-								<span className='card-span total'>Total: {team.total} points</span>
+								<span className='fs-5 card-span total'>Total: {team.total} points</span>
 							</CardText>
-							<CardFooter className='d-flex justify-content-center'>
-								<Button color='info' onClick={() => handleCardFlip(idx)}>
+							<div className='d-flex justify-content-center position-absolute bottom-0 start-0'>
+								<Button className='mb-3' color='info' onClick={() => handleCardFlip(idx)}>
 									<i className='bi bi-bar-chart-line pe-2' />
 									Scores
 								</Button>
-							</CardFooter>
+							</div>
 						</CardBody>
 						:
-						<CardBody className='p-2 px-0'>
+						<CardBody className='p-2 px-0 card-body-back position-relative'>
 							<CardHeader className='py-1 px-0'>
 								<CardTitle className='m-0'>
 									<span className='card-span back'>{team.name}</span>
 								</CardTitle>
 							</CardHeader>
 							<CardText className='mt-2'>
-								<Row>
+								<Row className='my-2 fs-5'>
 									<Col xs={4}>Round 1:</Col>
 									<Col xs={2}>{team.scores.round1}</Col>
 									<Col xs={4}>Round 5:</Col>
 									<Col xs={2}>{team.scores.round5}</Col>
 								</Row>
-								<Row>
+								<Row className='my-2 fs-5'>
 									<Col xs={4}>Round 2:</Col>
 									<Col xs={2}>{team.scores.round2}</Col>
 									<Col xs={4}>Round 6:</Col>
 									<Col xs={2}>{team.scores.round6}</Col>
-								</Row>								<Row>
+								</Row>
+								<Row className='my-2 fs-5'>
 									<Col xs={4}>Round 3:</Col>
 									<Col xs={2}>{team.scores.round3}</Col>
 									<Col xs={4}>Round 7:</Col>
 									<Col xs={2}>{team.scores.round7}</Col>
 								</Row>
-								<Row>
+								<Row className='my-2 fs-5'>
 									<Col xs={4}>Round 4:</Col>
 									<Col xs={2}>{team.scores.round4}</Col>
 									<Col xs={4}>Round 8:</Col>
 									<Col xs={2}>{team.scores.round8}</Col>
 								</Row>
 							</CardText>
-							<CardFooter className='d-flex justify-content-center'>
-								<Button color='info' onClick={() => handleCardFlip(idx)}>
+							<div className='d-flex justify-content-center position-absolute bottom-0 start-0'>
+								<Button className='mb-3' color='info' onClick={() => handleCardFlip(idx)}>
 									<i className='bi bi-chevron-double-left' />
 									Back
 								</Button>
-							</CardFooter>
+							</div>
 						</CardBody>
 					}
 				</Card>

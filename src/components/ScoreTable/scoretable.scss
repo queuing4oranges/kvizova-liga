@@ -75,7 +75,9 @@
 			font-weight: 700;
 		}
 	}
-	
+	.card-body-front, .card-body-back {
+		height: 18rem;
+	}
 	.card-span.position {
 		width: 2rem;
 		height: 2rem;
