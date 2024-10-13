@@ -7,7 +7,14 @@ import data from '../../data.json';
 import './scoretable.scss';
 
 export default function ScoreTable() {
-	const [isFlipped, setIsFlipped] = useState(false);
+	const [flippedCards, setFlippedCards] = useState({});
+
+	const handleCardFlip = (idx) => {
+		setFlippedCards((prevFlippedCards) => ({
+			...prevFlippedCards,
+			[idx]: !prevFlippedCards[idx]
+		}));
+	};
 
 	return (
 		<>
@@ -41,8 +48,8 @@ export default function ScoreTable() {
 			{/* This is the render for mobile version */}
 			{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
 			<Row className='scoretable-body-mobile' key={idx}>
-				<Card className={`my-2 flip-card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
-					{!isFlipped ?
+				<Card className={`my-2 flip-card ${flippedCards[idx] ? 'flipped' : ''}`} >
+					{flippedCards[idx] ?
 						<CardBody className='p-2 px-0'>
 							<CardHeader className='py-3 d-flex justify-content-center'>
 								<span className='card-span position'>{idx + 1}</span>
@@ -56,7 +63,7 @@ export default function ScoreTable() {
 								<span className='card-span total'>Total: {team.total} points</span>
 							</CardText>
 							<CardFooter className='d-flex justify-content-center'>
-								<Button color='info'>
+								<Button color='info' onClick={() => handleCardFlip(idx)}>
 									<i className='bi bi-bar-chart-line pe-2' />
 									Scores
 								</Button>
@@ -95,7 +102,7 @@ export default function ScoreTable() {
 								</Row>
 							</CardText>
 							<CardFooter className='d-flex justify-content-center'>
-								<Button color='info'>
+								<Button color='info' onClick={() => handleCardFlip(idx)}>
 									<i className='bi bi-chevron-double-left' />
 									Back
 								</Button>
