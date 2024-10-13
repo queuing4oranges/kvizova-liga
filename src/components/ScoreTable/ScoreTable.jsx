@@ -11,34 +11,32 @@ export default function ScoreTable() {
 
 	return (
 		<>
-			<Row>
-				<table className='table' >
-					<thead className='scoretable-header'>
-						<tr>
-							<th className='text-center'>#</th>
-							<th>Team</th>
-							<th>Team members</th>
-							{[...Array(8).keys()].map((num) => (
-								<th className='th-rounds' key={num + 1}>{num + 1}</th>
-							))}
-							<th className='th-total'>Total</th>
-						</tr>
-					</thead>
-					<tbody>
-						{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
-						<tr className='tb-rows' key={idx}>
-							<td><span className='header-span-round'>{idx + 1}</span></td>
-							<td className='team-name-column align-middle'>{team.name}</td>
-							<td className='team-members-column align-middle'>{team.members}</td>
-							{Object.keys(team.scores).map((round, idx) => (
-								<td className='team-rounds align-middle text-center' key={idx}>{team.scores[round]}</td>
-							))}
-							<td className='team-totals align-middle text-center fw-bold'>{team.total}</td>
-						</tr>
+			<table className='table'>
+				<thead className='scoretable-header'>
+					<tr>
+						<th className='hidden-element'></th>
+						<th>Team</th>
+						<th>Team members</th>
+						{[...Array(8).keys()].map((num) => (
+							<th className='th-rounds' key={num + 1}>{num + 1}</th>
 						))}
-					</tbody>
-				</table>
-			</Row>
+						<th className='th-total'>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
+					<tr className='tb-rows' key={idx}>
+						<td className='d-flex justify-content-end'><span className='header-span-round'>{idx + 1}</span></td>
+						<td className='align-middle team-name-column'>{team.name}</td>
+						<td className='team-members-column align-middle'>{team.members}</td>
+						{Object.keys(team.scores).map((round, idx) => (
+							<td className='team-rounds align-middle text-center' key={idx}>{team.scores[round]}</td>
+						))}
+						<td className='team-totals align-middle text-center fw-bold fs-4'>{team.total}</td>
+					</tr>
+					))}
+				</tbody>
+			</table>
 
 			{/* This is the render for mobile version */}
 			{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
@@ -52,8 +50,8 @@ export default function ScoreTable() {
 							<CardTitle>{team.name}</CardTitle>
 							<CardText>
 								<span>
-									<p className='m-0'>Team members:</p>
-									<p>{team.members}</p>
+									Team members:
+									{team.members}
 								</span><br />
 								<span className='card-span total'>Score total: {team.total}</span>
 							</CardText>

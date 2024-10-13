@@ -1,13 +1,12 @@
 .table {
 	border-collapse: separate !important;
-	border-spacing: 2rem !important;
+	border-spacing: 1rem !important;
 	background-color: transparent !important;
 
 	& th, td {
 		background-color: transparent !important;
 		padding: 1rem !important;
 		border: none !important;
-		border-radius: 6px !important;
 	}
 
 	& .header-span-round {
@@ -27,6 +26,10 @@
 			th {
 				color: #E7EEE7;
 			}
+
+			.hidden-element {
+				visibility: hidden;
+			}
 		}
 		
 	}
@@ -35,12 +38,12 @@
 		text-align: center;
 	}
 
-	& .team-name-column {
+	& .team-name-column, .team-rounds {
 		background-color: #FBC02D !important;
 		font-weight: 700;
 	}
 
-	& .team-members-column, .team-rounds, .team-totals {
+	& .team-members-column, .team-totals {
 		background-color: #F57C00 !important;
 	}
 }
