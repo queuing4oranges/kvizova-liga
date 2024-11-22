@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
-	Row, Col, Card, CardBody, CardTitle, CardText, CardHeader, Button,
+	Row, Col, Card, CardBody, CardTitle, CardHeader, Button,
 } from 'reactstrap';
 import data from '../../data.json';
 
@@ -8,12 +8,32 @@ import './scoretable.scss';
 
 export default function ScoreTable() {
 	const [flippedCards, setFlippedCards] = useState({});
+	const [updatedTeams, setUpdatedTeams] = useState([]);
+
+	useEffect(() => {
+		if (data.teams) {
+			const teamsWithTotals = updateTeamTotals(data.teams);
+			setUpdatedTeams(teamsWithTotals);
+		}
+	}, []);
 
 	const handleCardFlip = (idx) => {
 		setFlippedCards((prevFlippedCards) => ({
 			...prevFlippedCards,
 			[idx]: !prevFlippedCards[idx]
 		}));
+	};
+
+	// Function to update the total scores for each team
+	const updateTeamTotals = (teams) => {
+		return teams
+			// Calculate total scores
+			.map(team => {
+				const totalScore = Object.values(team.scores).reduce((acc, score) => acc + score, 0);
+				return { ...team, total: totalScore };
+			})
+			// Sort teams regarding to their total scores
+			.sort((a,b) => b.total - a.total);
 	};
 
 	return (
@@ -31,13 +51,12 @@ export default function ScoreTable() {
 					</tr>
 				</thead>
 				<tbody>
-					{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
+					{updatedTeams.map((team, idx) => (
 					<tr className='tb-rows' key={idx}>
 						<td className='position-column d-flex justify-content-end'><span className='header-span-round'>{idx + 1}</span></td>
-						<td className='align-middle team-name-column'>{team.name}</td>
-						<td className='team-members-column align-middle'>{team.members}</td>
-						{Object.keys(team.scores).map((round, idx) => (
-							<td className='team-rounds align-middle text-center' key={idx}>{team.scores[round]}</td>
+						<td className='align-middle team-name-column'>{team?.name}</td>
+						{Object.keys(team?.scores).map((round, idx) => (
+							<td className='team-rounds align-middle text-center' key={idx}>{team?.scores[round]}</td>
 						))}
 						<td className='team-totals align-middle text-center fw-bold fs-4'>{team.total}</td>
 					</tr>
@@ -46,22 +65,16 @@ export default function ScoreTable() {
 			</table>
 
 			{/* This is the render for mobile version */}
-			{data && Array.isArray(data.teams) && data.teams.map((team, idx) => (
+			{updatedTeams.map((team, idx) => (
 			<Row className='scoretable-body-mobile' key={idx}>
 				<Card className={`my-2 flip-card ${flippedCards[idx] ? 'flipped' : ''}`} >
 					{!flippedCards[idx] ?
-						<CardBody className='p-2 px-0 card-body-front position-relative'>
-							<CardHeader className='py-1 d-flex justify-content-center'>
-								<span className='card-span position'>{idx + 1}</span>
-							</CardHeader>
-							<CardTitle className='fs-2'>{team.name}</CardTitle>
-							<CardText>
-								<span className='d-flex flex-column'>
-									<span>Team members:</span>
-									<span>{team.members}</span>
-								</span><br />
-								<span className='fs-5 card-span total'>Total: {team.total} points</span>
-							</CardText>
+						<CardBody className='p-2 px-0 card-body-front position-relative d-flex flex-column justify-content-start align-items-center'>
+							<span className={`position mt-5 ${idx === 0 ? 'fs-1' : 'card-span'}`}>
+								{(idx === 0) ? '👑' : (idx+1)}
+							</span>
+							<h1 className='mt-4 fw-5'>{team.name}</h1>
+							<span className='fs-5 card-span total'>Total: {team?.total} points</span>
 							<div className='d-flex justify-content-center position-absolute bottom-0 start-0'>
 								<Button className='mb-3' color='info' onClick={() => handleCardFlip(idx)}>
 									<i className='bi bi-bar-chart-line pe-2' />
@@ -73,37 +86,37 @@ export default function ScoreTable() {
 						<CardBody className='p-2 px-0 card-body-back position-relative'>
 							<CardHeader className='py-1 px-0'>
 								<CardTitle className='m-0'>
-									<span className='card-span back'>{team.name}</span>
+									<span className='card-span back'>{team?.name}</span>
 								</CardTitle>
 							</CardHeader>
-							<CardText className='mt-2'>
-								<Row className='my-2 fs-5'>
+							<span className='mt-2'>
+								<Row className='my-2'>
 									<Col xs={4}>Round 1:</Col>
-									<Col xs={2}>{team.scores.round1}</Col>
+									<Col xs={2}>{team?.scores?.round1}</Col>
 									<Col xs={4}>Round 5:</Col>
 									<Col xs={2}>{team.scores.round5}</Col>
 								</Row>
-								<Row className='my-2 fs-5'>
+								<Row className='my-2'>
 									<Col xs={4}>Round 2:</Col>
-									<Col xs={2}>{team.scores.round2}</Col>
+									<Col xs={2}>{team?.scores?.round2}</Col>
 									<Col xs={4}>Round 6:</Col>
-									<Col xs={2}>{team.scores.round6}</Col>
+									<Col xs={2}>{team?.scores?.round6}</Col>
 								</Row>
-								<Row className='my-2 fs-5'>
+								<Row className='my-2'>
 									<Col xs={4}>Round 3:</Col>
-									<Col xs={2}>{team.scores.round3}</Col>
+									<Col xs={2}>{team?.scores?.round3}</Col>
 									<Col xs={4}>Round 7:</Col>
-									<Col xs={2}>{team.scores.round7}</Col>
+									<Col xs={2}>{team?.scores?.round7}</Col>
 								</Row>
-								<Row className='my-2 fs-5'>
+								<Row className='my-2d'>
 									<Col xs={4}>Round 4:</Col>
-									<Col xs={2}>{team.scores.round4}</Col>
+									<Col xs={2}>{team?.scores?.round4}</Col>
 									<Col xs={4}>Round 8:</Col>
-									<Col xs={2}>{team.scores.round8}</Col>
+									<Col xs={2}>{team?.scores?.round8}</Col>
 								</Row>
-							</CardText>
+							</span>
 							<div className='d-flex justify-content-center position-absolute bottom-0 start-0'>
-								<Button className='mb-3' color='info' onClick={() => handleCardFlip(idx)}>
+								<Button className='pt-1 mb-3' color='info' onClick={() => handleCardFlip(idx)}>
 									<i className='bi bi-chevron-double-left' />
 									Back
 								</Button>
