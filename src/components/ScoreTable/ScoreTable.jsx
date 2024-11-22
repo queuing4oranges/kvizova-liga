@@ -43,7 +43,6 @@ export default function ScoreTable() {
 					<tr>
 						<th className='hidden-element'></th>
 						<th>Team</th>
-						<th>Team members</th>
 						{[...Array(8).keys()].map((num) => (
 							<th className='th-rounds' key={num + 1}>{num + 1}</th>
 						))}
@@ -53,7 +52,7 @@ export default function ScoreTable() {
 				<tbody>
 					{updatedTeams.map((team, idx) => (
 					<tr className='tb-rows' key={idx}>
-						<td className='position-column d-flex justify-content-end'><span className='header-span-round'>{idx + 1}</span></td>
+						<td className='position-column d-flex justify-content-end align-items-center'><span className='header-span-round'>{idx + 1}</span></td>
 						<td className='align-middle team-name-column'>{team?.name}</td>
 						{Object.keys(team?.scores).map((round, idx) => (
 							<td className='team-rounds align-middle text-center' key={idx}>{team?.scores[round]}</td>
