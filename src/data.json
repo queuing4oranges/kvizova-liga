@@ -4,7 +4,7 @@
 			"name": "EmeMka",
 			"scores": {
 				"round1": 1,
-				"round2": 0,
+				"round2": 4,
 				"round3": 0,
 				"round4": 0,
 				"round5": 0,
@@ -32,7 +32,7 @@
 			"name": "K2\u00B2",
 			"scores": {
 				"round1": 2,
-				"round2": 0,
+				"round2": 2,
 				"round3": 0,
 				"round4": 0,
 				"round5": 0,
@@ -46,7 +46,7 @@
 			"name": "Nackensteak 🪦",
 			"scores": {
 				"round1": 1,
-				"round2": 0,
+				"round2": 1,
 				"round3": 0,
 				"round4": 0,
 				"round5": 0,
@@ -59,14 +59,14 @@
 		{
 			"name": "Ruličky",
 			"scores": {
-			"round1": 3,
-			"round2": 0,
-			"round3": 0,
-			"round4": 0,
-			"round5": 0,
-			"round6": 0,
-			"round7": 0,
-			"round8": 0
+				"round1": 3,
+				"round2": 5,
+				"round3": 0,
+				"round4": 0,
+				"round5": 0,
+				"round6": 0,
+				"round7": 0,
+				"round8": 0
 			},
 			"total": null
 		},
@@ -74,7 +74,7 @@
 			"name": "Samorosti ",
 			"scores": {
 				"round1": 1,
-				"round2": 0,
+				"round2": 1,
 				"round3": 0,
 				"round4": 0,
 				"round5": 0,
@@ -88,7 +88,7 @@
 			"name": "Kachny",
 			"scores": {
 				"round1": 5,
-				"round2": 0,
+				"round2": 4,
 				"round3": 0,
 				"round4": 0,
 				"round5": 0,
@@ -101,14 +101,14 @@
 		{
 			"name": "Akvabely",
 			"scores": {
-			"round1": 4,
-			"round2": 0,
-			"round3": 0,
-			"round4": 0,
-			"round5": 0,
-			"round6": 0,
-			"round7": 0,
-			"round8": 0
+				"round1": 4,
+				"round2": 1,
+				"round3": 0,
+				"round4": 0,
+				"round5": 0,
+				"round6": 0,
+				"round7": 0,
+				"round8": 0
 			},
 			"total": null
 		}
