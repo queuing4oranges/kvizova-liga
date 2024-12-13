@@ -24,16 +24,29 @@ export default function ScoreTable() {
 		}));
 	};
 
-	// Function to update the total scores for each team
+	// Function to update the total scores for each team and calculate ranks
 	const updateTeamTotals = (teams) => {
-		return teams
-			// Calculate total scores
-			.map(team => {
-				const totalScore = Object.values(team.scores).reduce((acc, score) => acc + score, 0);
-				return { ...team, total: totalScore };
-			})
-			// Sort teams regarding to their total scores
-			.sort((a,b) => b.total - a.total);
+
+		// Calculate total scores and add a `total` property
+		const scoredTeams = teams.map(team => {
+			const totalScore = Object.values(team.scores).reduce((acc, score) => acc + score, 0);
+			return { ...team, total: totalScore };
+		});
+
+		// Sort teams by total scores in descending order
+		scoredTeams.sort((a, b) => b.total - a.total);
+
+		// Calculate ranks, ensuring teams with the same score share the same rank
+		let currentRank = 1;
+		return scoredTeams.map((team, index, array) => {
+			if (index > 0 && array[index].total === array[index - 1].total) {
+				team.rank = array[index - 1].rank; // Share rank with the previous team
+			} else {
+				team.rank = currentRank; // Assign the current rank
+			}
+			currentRank++;
+			return team;
+		});
 	};
 
 	return (
@@ -52,7 +65,7 @@ export default function ScoreTable() {
 				<tbody>
 					{updatedTeams.map((team, idx) => (
 					<tr className='tb-rows' key={idx}>
-						<td className='position-column d-flex justify-content-end align-items-center'><span className='header-span-round'>{idx + 1}</span></td>
+						<td className='position-column d-flex justify-content-end align-items-center'><span className='header-span-round'>{team.rank}</span></td>
 						<td className='align-middle team-name-column'>{team?.name}</td>
 						{Object.keys(team?.scores).map((round, idx) => (
 							<td className='team-rounds align-middle text-center' key={idx}>{team?.scores[round]}</td>

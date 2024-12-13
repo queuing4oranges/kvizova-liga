@@ -5,7 +5,7 @@
 			"scores": {
 				"round1": 1,
 				"round2": 4,
-				"round3": 0,
+				"round3": 2,
 				"round4": 0,
 				"round5": 0,
 				"round6": 0,
@@ -61,7 +61,7 @@
 			"scores": {
 				"round1": 3,
 				"round2": 5,
-				"round3": 0,
+				"round3": 5,
 				"round4": 0,
 				"round5": 0,
 				"round6": 0,
@@ -89,7 +89,7 @@
 			"scores": {
 				"round1": 5,
 				"round2": 4,
-				"round3": 0,
+				"round3": 1,
 				"round4": 0,
 				"round5": 0,
 				"round6": 0,
@@ -103,12 +103,26 @@
 			"scores": {
 				"round1": 4,
 				"round2": 1,
-				"round3": 0,
+				"round3": 4,
 				"round4": 0,
 				"round5": 0,
 				"round6": 0,
 				"round7": 0,
 				"round8": 0
+			},
+			"total": null
+		},
+		{
+			"name": "Dany's Friends",
+			"scores": {
+			"round1": 0,
+			"round2": 0,
+			"round3": 4,
+			"round4": 0,
+			"round5": 0,
+			"round6": 0,
+			"round7": 0,
+			"round8": 0
 			},
 			"total": null
 		}
