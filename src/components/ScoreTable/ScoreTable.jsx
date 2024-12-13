@@ -55,11 +55,11 @@ export default function ScoreTable() {
 				<thead className='scoretable-header'>
 					<tr>
 						<th className='hidden-element'></th>
-						<th>Team</th>
+						<th className='align-middle'>Team</th>
 						{[...Array(8).keys()].map((num) => (
-							<th className='th-rounds' key={num + 1}>{num + 1}</th>
+							<th className='th-rounds align-middle' key={num + 1}>{num + 1}</th>
 						))}
-						<th className='th-total'>Total</th>
+						<th className='th-total align-middle'>Total</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -83,7 +83,7 @@ export default function ScoreTable() {
 					{!flippedCards[idx] ?
 						<CardBody className='p-2 px-0 card-body-front position-relative d-flex flex-column justify-content-start align-items-center'>
 							<span className={`position mt-5 ${idx === 0 ? 'fs-1' : 'card-span'}`}>
-								{(idx === 0) ? '👑' : (idx+1)}
+								{(idx === 0) ? '👑' : (team.rank)}
 							</span>
 							<h1 className='mt-4 fw-5'>{team.name}</h1>
 							<span className='fs-5 card-span total'>Total: {team?.total} points</span>
@@ -104,27 +104,27 @@ export default function ScoreTable() {
 							<span className='mt-2'>
 								<Row className='my-2'>
 									<Col xs={4}>Round 1:</Col>
-									<Col xs={2}>{team?.scores?.round1}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round1}</Col>
 									<Col xs={4}>Round 5:</Col>
-									<Col xs={2}>{team.scores.round5}</Col>
+									<Col xs={2} className='fw-bold'>{team.scores.round5}</Col>
 								</Row>
 								<Row className='my-2'>
 									<Col xs={4}>Round 2:</Col>
-									<Col xs={2}>{team?.scores?.round2}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round2}</Col>
 									<Col xs={4}>Round 6:</Col>
-									<Col xs={2}>{team?.scores?.round6}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round6}</Col>
 								</Row>
 								<Row className='my-2'>
 									<Col xs={4}>Round 3:</Col>
-									<Col xs={2}>{team?.scores?.round3}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round3}</Col>
 									<Col xs={4}>Round 7:</Col>
-									<Col xs={2}>{team?.scores?.round7}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round7}</Col>
 								</Row>
 								<Row className='my-2d'>
 									<Col xs={4}>Round 4:</Col>
-									<Col xs={2}>{team?.scores?.round4}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round4}</Col>
 									<Col xs={4}>Round 8:</Col>
-									<Col xs={2}>{team?.scores?.round8}</Col>
+									<Col xs={2} className='fw-bold'>{team?.scores?.round8}</Col>
 								</Row>
 							</span>
 							<div className='d-flex justify-content-center position-absolute bottom-0 start-0'>

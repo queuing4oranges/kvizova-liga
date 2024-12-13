@@ -22,7 +22,7 @@ export default function LeaderBoard() {
 			<Row className='p-3 d-flex align-items-center justify-content-center'>
 				<Navbar />
 			</Row>
-			<Row className='p-3'>
+			<Row className='px-3 pt-0'>
 				<Heading />
 			</Row>
 			<Row className='p-3 score-table-row w-100 m-auto'>
