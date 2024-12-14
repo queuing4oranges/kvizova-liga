@@ -5,6 +5,7 @@ import {
 import data from '../../data.json';
 
 import './scoretable.scss';
+import RainbowCrown from './RainbowCrown';
 
 export default function ScoreTable() {
 	const [flippedCards, setFlippedCards] = useState({});
@@ -83,7 +84,7 @@ export default function ScoreTable() {
 					{!flippedCards[idx] ?
 						<CardBody className='p-2 px-0 card-body-front position-relative d-flex flex-column justify-content-start align-items-center'>
 							<span className={`position mt-5 ${idx === 0 ? 'fs-1' : 'card-span'}`}>
-								{(idx === 0) ? '👑' : (team.rank)}
+								{(idx === 0) ?  <RainbowCrown width={100} height={50}/> : (team.rank)}
 							</span>
 							<h1 className='mt-4 fw-5'>{team.name}</h1>
 							<span className='fs-5 card-span total'>Total: {team?.total} points</span>
